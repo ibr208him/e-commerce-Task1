@@ -1,8 +1,8 @@
 import {React,useContext} from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import axios from "axios";
-import ReactImageMagnify from "react-image-magnify";
+// import ReactImageMagnify from "react-image-magnify";
 import './ProductDetails.css'
 import { CartContext } from '../Context/CartContext.jsx'
 
@@ -35,7 +35,8 @@ const {addToCartContext}=useContext(CartContext);
         <h2 className="mb-5 fs-1">{data?.product.name}</h2>
         <p className="mb-5 fs-5">{data?.product.description}</p>
         <div className="imgContainer w-50 h-50 me-auto">
-          <ReactImageMagnify
+
+          {/* <ReactImageMagnify
             {...{
               smallImage: {
                 alt: "Wristwatch by Ted Baker London",
@@ -57,7 +58,8 @@ const {addToCartContext}=useContext(CartContext);
                 height: "70%",
               },
             }}
-          />
+          /> */}
+<img src={data.product.mainImage.secure_url} className="img-fluid" />
         </div>
 
         <p className="my-5 fw-bold fs-2">
